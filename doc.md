@@ -29,10 +29,10 @@ package.json: các phiên bản thư viện đã cài đặt, setup các câu l�
 App.vue
 
 ```js
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue'
+import App from './App.vue'
 
-createApp(App).mount("#app");
+createApp(App).mount('#app')
 ```
 
 lấy createApp từ thư viện vue
@@ -57,15 +57,15 @@ Một component giống như 1 khối cho web của bạn. Hãy hình dung nó n
 ```js
 // HelloWorld.vue
 <template>
-    <h1>This is parent Component</h1>
-    <AnotherComponent />
+  <h1>This is parent Component</h1>
+  <AnotherComponent />
 </template>
 ```
 
 ```js
 // AnotherComponent.vue
 <template>
-    <h1>--Nested Component</h1>
+  <h1>--Nested Component</h1>
 </template>
 ```
 
@@ -86,3 +86,36 @@ App.Vue
 Text Interpolation is refers to the process of dynamically binding data to the content of an HTML element in your template. It allows you to display the value of a JavaScript expression or a variable within the markup.
 
 Nội suy ví dụ: {{ code JavaScript ở đây }} văn bản đề cập đến quá trình liên kết động dữ liệu với nội dung của phần tử HTML trong mẫu của bạn. Nó cho phép bạn hiển thị giá trị của biểu thức JavaScript hoặc một biến trong phần đánh dấu.
+
+```vue
+<!-- Con -->
+<script setup>
+const myMessages = 'Happy New Year'
+const year = 2024
+const add = (x, y) => {
+  return x + y
+}
+</script>
+
+<template>
+  <h1>{{ myMessages + ' ' + year }}</h1>
+  <!-- Có thể thực hiện tính toán -->
+  <p>2 + 2 = {{ 2 + 2 }}</p>
+  <!-- 2 + 2 = 4 -->
+
+  <p>Add: {{ add(5, 5) }}</p>
+  <!--Add: 10 -->
+</template>
+
+<style scope></style>
+
+<!-- Cha -->
+<script setup>
+import MyComponents from './components/MyComponents.vue'
+</script>
+<template>
+  <MyComponents />
+</template>
+<style scoped></style>
+```
+
