@@ -1,4 +1,6 @@
 <script setup>
+import ConditionalRendering from './components/ConditionalRendering.vue'
+
 // import MyComponents from './components/MyComponents.vue'
 // import GlobalStyleVue from './components/GlobalStyle.vue'
 // import LocalStyle from './components/LocalStyle.vue'
@@ -9,7 +11,7 @@
 // import MyReactiveComponent from './components/MyReactiveComponent.vue';
 // import MyRefComponent from './components/MyRefComponent.vue';
 // import MyRefandReactive from './components/MyRefandReactive.vue';
-import ComputedProperties from './components/ComputedProperties.vue'
+// import ComputedProperties from './components/ComputedProperties.vue'
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -33,6 +35,9 @@ import ComputedProperties from './components/ComputedProperties.vue'
   <!-- Ref and Reactive -->
   <!-- <MyRefandReactive /> -->
 
-  <ComputedProperties />
+  <!-- <ComputedProperties /> -->
+
+  <!-- ConditionalRendering -->
+  <ConditionalRendering />
 </template>
 <style scoped></style>

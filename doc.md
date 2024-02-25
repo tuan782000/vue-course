@@ -228,3 +228,59 @@ It's like a little worker that watches certain data, performs some work on it, a
 Thuộc tính "computed" là một loại biến đặc biệt tự động cập nhật bất cứ khi nào dữ liệu phụ thuộc vào thay đổi
 
 Nó giống như một công nhân nhỏ theo dõi một số dữ liệu nhất định, thực hiện một số công việc trên đó và luôn cung cấp cho bạn kết quả cập nhật nhất.
+
+### Conditional Rendering
+
+Conditional Rendering is refers to the ability to conditionally display or hide elements in the user interface based on certain conditions or expressions.
+
+Kết xuất có điều kiện đề cập đến khả năng hiển thị hoặc ẩn các thành phần trong giao diện người dùng có điều kiện dựa trên các điều kiện hoặc biểu thức nhất định.
+
+v-if(condition)
+
+v-else-if(condition)
+
+v-else
+
+v-show
+
+- V-show directive is used for conditional rendering. It toggles the visibility of an element based on the truthiness of the provided expression. Unlike v-if, which completely adds or removes the element from the DOM, v-show toggles the css display property of the element to control its visibility while keeping it in the DOM.
+
+- Lệnh V-show được sử dụng để hiển thị có điều kiện. Nó thay đổi mức độ hiển thị của một phần tử dựa trên tính xác thực của biểu thức được cung cấp. Không giống như v-if, bổ sung hoặc loại bỏ hoàn toàn phần tử khỏi DOM, v-show chuyển đổi thuộc tính hiển thị css của phần tử để kiểm soát khả năng hiển thị của nó trong khi vẫn giữ nó trong DOM.
+
+```Vue
+<script setup>
+const isTrue = false
+const isFalse = false
+</script>
+<template>
+  <div>
+    <p v-if="isTrue">This will show if isTrue is true.</p>
+    <p v-else-if="isFalse">This is will show if isFalse is true.</p>
+    <p v-else>This will show if neither isTrue nor isFalse is true.</p>
+    <!-- 1 số lưu ý: v-if hoặc v-else-if có tồn tại thì sẽ hiện ở body, không tồn tại thì sẽ xóa khỏi phần body-->
+    <!--
+         Ở trên Nếu 1 đúng 2 sai hiện p số 1.
+         Nếu 1 sai 2 đúng hiện p số 2
+         Còn lại cả đều false hiện p số 3 -->
+  </div>
+</template>
+<style scoped></style>
+```
+
+```vue
+<script setup>
+import { ref } from 'vue'
+let visible = ref(true)
+
+const handleToggle = () => {
+  visible.value = !visible.value
+}
+</script>
+<template>
+  <!-- Tác dụng v-show chỉ ẩn nó đi không xóa nó khỏi body -->
+  <!-- ẩn nó bằng cách bổ sung display:none -->
+  <p v-show="visible">Hello</p>
+  <!-- v-on:click -->
+  <button @click="handleToggle">Toggle</button>
+</template>
+```
