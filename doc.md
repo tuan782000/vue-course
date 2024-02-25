@@ -119,3 +119,34 @@ import MyComponents from './components/MyComponents.vue'
 <style scoped></style>
 ```
 
+### Attributes Bindings:
+
+Attribute biding is way to bind HTML attributes to data in Vue instance.
+
+- Cách cũ: v-bind:attr
+- Cách mới: :attr
+
+```vue
+<a v-bind:href="google">Visit Google</a>
+
+<!-- or -->
+
+<a :href="google">Visit Google</a>
+```
+
+Phân tích 1 chút
+
+```vue
+<script setup>
+const google = 'https://www.google.com'
+</script>
+<a href="google">Visit Google</a>
+<a :href="google">Visit Google</a>
+```
+
+Không có 2 chấm ở trước thì href sẽ là google chỉ là tên bình thường
+
+Nếu có 2 chấm trước nó sẽ hiểu là v-bind: google trong attributes sẽ là tên biến đã khai báo ở trên
+
+
+
