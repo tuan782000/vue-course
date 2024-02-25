@@ -160,5 +160,71 @@ Module style
 
 Combined style: kết hợp giữa local và global style
 
+### Event handlers in Vue
 
+"V-on" tương đương "@"" sau đó mình sẽ thêm sự kiện cho nó
 
+```vue
+<script>
+import { ref } from 'vue'
+// Tạo một đối tượng ref với giá trị mặc định là 0
+let count = ref(0) // ref là đối tượng đại diện cho giá trị ban đầu
+const incrementCounter = () => {
+  count.value++
+}
+
+const decrementCounter = () => {
+  count.value--
+}
+</script>
+
+<h1>Count: {{ count }}</h1>
+<button v-on:click="incrementCounter">Increment</button>
+<button v-on:click="decrementCounter">Decrement</button>
+```
+
+### Reactivity in vue
+
+Reactivity means that the framework can be automatically update UI when the information behind it changes. It is a core concept that allows you to create dynamic and responsive applications without manually manipulating the DOM.
+
+Khả năng phản ứng có nghĩa là khung có thể tự động cập nhật giao diện người dùng khi thông tin đằng sau nó thay đổi. Đó là khái niệm cốt lõi cho phép bạn tạo các ứng dụng động và đáp ứng mà không cần thao tác DOM theo cách thủ công.
+
+### Reactive
+
+The reactive function is used to create reactive objects. A reactive object is an object where changes to it is properties
+are automatically detected, triggering updates in the user interface. It is a way to make an object "reactive" in Vue.js
+
+Hàm phản ứng được sử dụng để tạo các đối tượng phản ứng. Một đối tượng phản ứng là một đối tượng trong đó các thuộc tính của nó thay đổi được tự động phát hiện, kích hoạt cập nhật trong giao diện người dùng. Đó là một cách để tạo một đối tượng "phản ứng" trong Vue.js
+
+Can't store primitive data types
+
+Cách hoạt động của ref và reactive đều là các cách để quản lý và theo dõi trạng thái trong một component
+
+Đối tượng trả về:
+
+ref: Trả về một đối tượng ref với một thuộc tính .value để truy cập và cập nhật giá trị. Đối tượng này thường được sử dụng cho trạng thái đơn giản.
+reactive: Trả về một đối tượng proxy hoàn toàn mới, mà bạn có thể truy cập và cập nhật trực tiếp các thuộc tính của nó. Đối tượng này thường được sử dụng cho trạng thái phức tạp hơn với nhiều thuộc tính.
+Cách truy cập và cập nhật giá trị:
+
+ref: Truy cập và cập nhật giá trị thông qua .value, như count.value.
+reactive: Truy cập và cập nhật trực tiếp các thuộc tính, như user.name.
+Áp dụng cho loại dữ liệu:
+
+ref: Thích hợp cho trạng thái đơn giản, giữ một giá trị.
+reactive: Thích hợp cho trạng thái phức tạp với nhiều thuộc tính, giống như một đối tượng.
+
+### Ref
+
+ref() is used to create a reactive reference to a value. Unlike the reactive function, which is used for creating reactive objects, ref is specifically designed for creating reactive single value.
+
+You can store any value you want: Bạn có thể lưu trữ bất kỳ giá trị nào bạn muốn
+
+### Computed Properties
+
+A computed property is a special kind of variable that automatically updates itself whenever the data it depends on changes
+
+It's like a little worker that watches certain data, performs some work on it, and always give you the most up-to-date result.
+
+Thuộc tính "computed" là một loại biến đặc biệt tự động cập nhật bất cứ khi nào dữ liệu phụ thuộc vào thay đổi
+
+Nó giống như một công nhân nhỏ theo dõi một số dữ liệu nhất định, thực hiện một số công việc trên đó và luôn cung cấp cho bạn kết quả cập nhật nhất.
