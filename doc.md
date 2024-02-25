@@ -148,5 +148,17 @@ Không có 2 chấm ở trước thì href sẽ là google chỉ là tên bình 
 
 Nếu có 2 chấm trước nó sẽ hiểu là v-bind: google trong attributes sẽ là tên biến đã khai báo ở trên
 
+### Style in Vue:
+
+Có 4 cách Style
+
+Global style: style css trong file đó luôn
+
+Local style: style css thuộc cha của nó.
+
+Module style
+
+Combined style: kết hợp giữa local và global style
+
 
 
