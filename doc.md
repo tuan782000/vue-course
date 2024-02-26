@@ -284,7 +284,9 @@ const handleToggle = () => {
   <button @click="handleToggle">Toggle</button>
 </template>
 ```
+
 ### Interaction
+
 V-for
 
 The v-for directive is used to iterate over an array or an object and render a template for each item in the collection.
@@ -318,3 +320,16 @@ Vue relies on keys to track the identity of elements, and using unique keys for 
 
 Việc sử dụng key có thể giúp tránh những lỗi thường gặp, chẳng hạn như cảnh báo key trùng lặp trong bảng điều khiển hoặc hiển thị không chính xác khi các mục được sắp xếp lại trong danh sách.
 Vue dựa vào các key để theo dõi danh tính của các thành phần và việc sử dụng các key duy nhất cho từng mục đảm bảo rằng Vue có thể cập nhật chính xác DOM dựa trên những thay đổi trong danh sách.
+
+### V-model
+
+V-model is a directive provides two-way data binding on an input, textarea or select element. It creates a connection between the data in your component and input field, allowing changes in one to automatically update the other and vice versa.
+
+V-model là một lệnh cung cấp liên kết dữ liệu hai chiều trên một phần tử đầu vào, vùng văn bản hoặc phần chọn. Nó tạo ra kết nối giữa dữ liệu trong trường thành phần và trường đầu vào của bạn, cho phép các thay đổi trong một dữ liệu này sẽ tự động cập nhật dữ liệu kia và ngược lại.
+
+Two way binding?
+
+Two way binding means that changes in your code automatically update what you see on the screen, and vice versa. It's like a live connection between your data and the user interface, making it easy to keep them in sync without writing alot of extra code.
+
+Liên kết hai chiều có nghĩa là những thay đổi trong mã của bạn sẽ tự động cập nhật những gì bạn nhìn thấy trên màn hình và ngược lại. Nó giống như một kết nối trực tiếp giữa dữ liệu của bạn và giao diện người dùng, giúp bạn dễ dàng đồng bộ hóa chúng mà không cần phải viết thêm nhiều mã.
+

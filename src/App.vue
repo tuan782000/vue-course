@@ -13,7 +13,8 @@
 // import MyRefandReactive from './components/MyRefandReactive.vue';
 // import ComputedProperties from './components/ComputedProperties.vue'
 // import ConditionalRendering from './components/ConditionalRendering.vue'
-import InteractionComponent from './components/InteractionComponent.vue';
+// import InteractionComponent from './components/InteractionComponent.vue';
+import InteractionWithModelComponent from './components/InteractionWithModel.vue'
 
 </script>
 <template>
@@ -42,6 +43,6 @@ import InteractionComponent from './components/InteractionComponent.vue';
 
   <!-- ConditionalRendering -->
   <!-- <ConditionalRendering /> -->
-  <InteractionComponent />
+  <InteractionWithModelComponent />
 </template>
 <style scoped></style>
