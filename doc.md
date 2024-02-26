@@ -333,3 +333,47 @@ Two way binding means that changes in your code automatically update what you se
 
 Liên kết hai chiều có nghĩa là những thay đổi trong mã của bạn sẽ tự động cập nhật những gì bạn nhìn thấy trên màn hình và ngược lại. Nó giống như một kết nối trực tiếp giữa dữ liệu của bạn và giao diện người dùng, giúp bạn dễ dàng đồng bộ hóa chúng mà không cần phải viết thêm nhiều mã.
 
+### Props
+
+"Props" (short for properties) are a way to pass data from a parent component to a child component Props allow you to communicate between components by allowing them parent component to pass data down to its child components. This is useful for creating reusable and modular components.
+
+"Props" (viết tắt của thuộc tính) là một cách truyền dữ liệu từ thành phần cha mẹ sang thành phần con Props cho phép bạn giao tiếp giữa các thành phần bằng cách cho phép thành phần cha mẹ truyền dữ liệu xuống thành phần con của nó. Điều này rất hữu ích cho việc tạo các thành phần mô-đun và có thể tái sử dụng.
+
+### ComponentEvent
+
+Component events are a way for child components to communicate with their parent components. They allow child components to
+emit events (custom events) that can be listened to and handled by their parent components.
+
+Các sự kiện của thành phần là một cách để các thành phần con giao tiếp với các thành phần cha của chúng. Chúng cho phép các thành phần con phát ra các sự kiện (sự kiện tùy chỉnh) có thể được các thành phần chính của chúng lắng nghe và xử lý.
+
+Child Component emits an Event - Thành phần con phát ra một sự kiện
+
+Inside a child component, you can use the $emit method to trigger a custom event. This event can carry data that you want to send to the parent.
+
+Bên trong thành phần con, bạn có thể sử dụng phương thức $emit để kích hoạt sự kiện tùy chỉnh. Sự kiện này có thể mang dữ liệu mà bạn muốn gửi cho phụ huynh.
+
+Parent Component Listens to the Event - Thành phần cha-mej lắng nghe sự kiện.
+
+In the parent component's template, you can use the v-on directive (or the shorthand @) to listen for the custom event emitted by the child.
+
+Trong mẫu của thành phần cha, bạn có thể sử dụng lệnh v-on (hoặc tốc ký @) để lắng nghe sự kiện tùy chỉnh do thành phần con phát ra.
+
+### Slots
+
+### Provide && Inject
+
+### Lifecycle Hooks
+
+### Watchers
+
+### Template Ref
+
+### Async Components
+
+### Composables
+
+### Custom Directives
+
+### Dynamic Components
+
+### Data Fetching in Vue

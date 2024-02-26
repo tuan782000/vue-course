@@ -1,6 +1,4 @@
 <script setup>
-
-
 // import MyComponents from './components/MyComponents.vue'
 // import GlobalStyleVue from './components/GlobalStyle.vue'
 // import LocalStyle from './components/LocalStyle.vue'
@@ -14,8 +12,11 @@
 // import ComputedProperties from './components/ComputedProperties.vue'
 // import ConditionalRendering from './components/ConditionalRendering.vue'
 // import InteractionComponent from './components/InteractionComponent.vue';
-import InteractionWithModelComponent from './components/InteractionWithModel.vue'
+// import InteractionWithModelComponent from './components/InteractionWithModel.vue'
 
+// Props
+import StaticPropsComponents from './components/StaticPropsComponents.vue'
+import CustomValidator from './components/CustomValidator.vue'
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -43,6 +44,8 @@ import InteractionWithModelComponent from './components/InteractionWithModel.vue
 
   <!-- ConditionalRendering -->
   <!-- <ConditionalRendering /> -->
-  <InteractionWithModelComponent />
+  <!-- <InteractionWithModelComponent /> -->
+  <StaticPropsComponents name="Tuan" />
+  <CustomValidator name="randomPerson" :age="20" password="impossiblePassword" />
 </template>
 <style scoped></style>
