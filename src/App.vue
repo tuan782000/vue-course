@@ -15,8 +15,19 @@
 // import InteractionWithModelComponent from './components/InteractionWithModel.vue'
 
 // Props
-import StaticPropsComponents from './components/StaticPropsComponents.vue'
-import CustomValidator from './components/CustomValidator.vue'
+// import StaticPropsComponents from './components/StaticPropsComponents.vue'
+// import CustomValidator from './components/CustomValidator.vue'
+
+import ComponentEvent from './components/ComponentEvent.vue'
+import FormComponent from './components/FormComponent.vue'
+import { ref } from 'vue'
+let count = ref(0)
+
+const formHandler = (username, email, password) => {
+  console.log('username', username)
+  console.log('email', email)
+  console.log('password', password)
+}
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -45,7 +56,15 @@ import CustomValidator from './components/CustomValidator.vue'
   <!-- ConditionalRendering -->
   <!-- <ConditionalRendering /> -->
   <!-- <InteractionWithModelComponent /> -->
-  <StaticPropsComponents name="Tuan" />
-  <CustomValidator name="randomPerson" :age="20" password="impossiblePassword" />
+
+  <!-- Props -->
+  <!-- <StaticPropsComponents name="Tuan" />
+  <CustomValidator name="randomPerson" :age="20" password="impossiblePassword" /> -->
+
+  <!-- Component event -->
+  <h1>Count: {{ count }}</h1>
+  <ComponentEvent @incrementCounter="count++" />
+  <hr />
+  <FormComponent @userInfo="formHandler" />
 </template>
 <style scoped></style>
