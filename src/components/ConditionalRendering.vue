@@ -8,7 +8,7 @@ const handleToggle = () => {
   isVisible.value = !isVisible.value
 }
 
-const isActive = ref(true);
+const isActive = ref(true)
 const handleTogglePost = () => {
   isActive.value = !isActive.value
 }
@@ -17,7 +17,6 @@ const isUserLogin = ref(true)
 const userName = 'Tuan'
 const showDetails = ref(isUserLogin)
 
-
 const loggedIn = ref(false)
 const admin = 'admin'
 
@@ -25,6 +24,7 @@ const handleLogin = () => {
   loggedIn.value = !loggedIn.value
 }
 
+let password = ref("123456789")
 </script>
 <template>
   <div>
@@ -49,7 +49,11 @@ const handleLogin = () => {
 
     <div v-if="isActive">
       <h1>Blog</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque officia nisi voluptas officiis, dolor impedit at quisquam modi laudantium harum in iure ipsum enim blanditiis eveniet voluptatem, ut expedita voluptatum.</p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque officia nisi voluptas
+        officiis, dolor impedit at quisquam modi laudantium harum in iure ipsum enim blanditiis
+        eveniet voluptatem, ut expedita voluptatum.
+      </p>
     </div>
 
     <button @click="handleTogglePost">Toggle Blog</button>
@@ -62,6 +66,11 @@ const handleLogin = () => {
       <button @click="handleLogin">Loggin</button>
     </div>
 
+    <div>
+      <h1 v-if="password.length > 8">Strong password</h1>
+      <h1 v-else-if="password.length < 8">Weak password</h1>
+      <h1 v-else>Please Enter your password</h1>
+    </div>
   </div>
 </template>
 <style scoped></style>

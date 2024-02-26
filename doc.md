@@ -284,3 +284,37 @@ const handleToggle = () => {
   <button @click="handleToggle">Toggle</button>
 </template>
 ```
+### Interaction
+V-for
+
+The v-for directive is used to iterate over an array or an object and render a template for each item in the collection.
+
+Lệnh v-for được sử dụng để lặp qua một mảng hoặc một đối tượng và hiển thị mẫu cho từng mục trong bộ sưu tập.
+
+```vue
+<script setup>
+import { ref } from 'vue'
+let peoples = ref(['alex', 'Jodarn', 'Nathan'])
+</script>
+<template>
+  <p v-for="(person, index) in peoples" :key="index">{{ person }}</p>
+</template>
+```
+
+index: này là optional có cũng được không có cũng được
+
+Efficient DOM updates - Cập nhật DOM hiệu quả
+
+When Vue renders a list of elements, it uses a virtual DOM to determine the most efficient way to update the actual DOM. The key helps Vue identify which elements have changed, have added, or been removed
+Without keys, Vue may need to recreate the entire DOM structure for each update, Which can be less efficient.
+
+Khi Vue hiển thị danh sách các thành phần, nó sử dụng DOM ảo để xác định cách hiệu quả nhất để cập nhật DOM thực tế. Key giúp Vue xác định phần tử nào đã thay đổi, đã thêm hoặc bị xóa
+Nếu không có key, Vue có thể cần tạo lại toàn bộ cấu trúc DOM cho mỗi bản cập nhật, điều này có thể kém hiệu quả hơn.
+
+Avoiding Common Pitfalls - Tránh những cạm bẫy phổ biến
+
+Using key can help avoid common pitfalls, such as duplicate key warnings in the console or incorrect rendering when items are rearranged in the list.
+Vue relies on keys to track the identity of elements, and using unique keys for each item ensures that Vue can accurately update the DOM based on changes in the list.
+
+Việc sử dụng key có thể giúp tránh những lỗi thường gặp, chẳng hạn như cảnh báo key trùng lặp trong bảng điều khiển hoặc hiển thị không chính xác khi các mục được sắp xếp lại trong danh sách.
+Vue dựa vào các key để theo dõi danh tính của các thành phần và việc sử dụng các key duy nhất cho từng mục đảm bảo rằng Vue có thể cập nhật chính xác DOM dựa trên những thay đổi trong danh sách.
