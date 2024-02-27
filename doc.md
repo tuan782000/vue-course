@@ -358,7 +358,63 @@ In the parent component's template, you can use the v-on directive (or the short
 
 Trong mẫu của thành phần cha, bạn có thể sử dụng lệnh v-on (hoặc tốc ký @) để lắng nghe sự kiện tùy chỉnh do thành phần con phát ra.
 
+Thành phần cha:
+
+```vue
+<script setup>
+import FormComponent from './components/FormComponent.vue'
+
+const formHandler = (username, email, password) => {
+  console.log('username', username)
+  console.log('email', email)
+  console.log('password', password)
+}
+</script>
+<template>
+  <FormComponent @userInfo="formHandler" />
+</template>
+```
+
+Thành phần con:
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const username = ref('')
+const email = ref('')
+const password = ref('')
+</script>
+<template>
+  <form @submit.prevent="$emit('userInfo', username, email, password)">
+    <input type="text" placeholder="Enter your username" v-model="username" />
+    <input type="email" placeholder="Enter your email" v-model="email" />
+    <input type="password" placeholder="Enter your password" v-model="password" />
+    <button>Submit</button>
+  </form>
+</template>
+```
+
+Khi thành phần con, có form thằng này sẽ phát sự kiện lên thằng cha bằng $emit, mình đặt tên cho sự kiện nó là userInfo. truyền các giá trị username, email, và password lên cấp cha.
+
+Các trường input của biểu mẫu sử dụng v-model để liên kết với các biến được định nghĩa trong ref. Điều này giúp đồng bộ dữ liệu giữa giao diện người dùng và trạng thái của component.
+
 ### Slots
+
+A Slot is like a space in a component where you can put different things. It allow you to create resuable components that can accept different content while maintaining a consistent structure.
+
+Slot giống như một khoảng trống trong một thành phần nơi bạn có thể đặt những thứ khác nhau. Nó cho phép bạn tạo các thành phần có thể sử dụng được, có thể chấp nhận các nội dung khác nhau trong khi vẫn duy trì cấu trúc nhất quán.
+
+Fallback/Default Content
+
+Fallback content in slots refers to the default content that is displayed when no content is provided for a particular slot. It's a way to ensure that a component still has meaningful content, event if parent component does not pass any content a specific slot.
+
+Nội dung dự phòng trong các vị trí đề cập đến nội dung mặc định được hiển thị khi không có nội dung nào được cung cấp cho một vị trí cụ thể. Đó là một cách để đảm bảo rằng một thành phần vẫn có nội dung có ý nghĩa, ngay cả khi thành phần cha mẹ không chuyển bất kỳ nội dung nào vào một vị trí cụ thể.
+
+Named Slots:
+
+A named slot is a way to assign a specific name a slot in a component. Unlike the default slot, which is unnamed and used when to explicit name is provided, name slots allow you to have multiple slots in a component and specify where the content should be inserted based on the slot's name.
+
+Vị trí được đặt tên là một cách để gán một tên cụ thể cho một vị trí trong một thành phần. Không giống như vị trí mặc định, không được đặt tên và được sử dụng khi cung cấp tên rõ ràng, vị trí tên cho phép bạn có nhiều vị trí trong một thành phần và chỉ định vị trí nên chèn nội dung dựa trên tên của vị trí.
 
 ### Provide && Inject
 
