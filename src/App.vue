@@ -90,7 +90,13 @@
 // ])
 
 // LifeCycle Hooks
-import LifeCycleHooks from './components/LifeCycleHooks.vue'
+// import LifeCycleHooks from './components/LifeCycleHooks.vue'
+
+// Watch 
+import BasicComponent from './components/BasicComponent.vue';
+import ReactiveObject from './components/ReactiveObject.vue';
+import UsingGetterFunction from './components/UsingGetterFunction.vue';
+import MultipleSources from './components/MultipleSources.vue'
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -161,6 +167,11 @@ import LifeCycleHooks from './components/LifeCycleHooks.vue'
   <!-- <SchoolComponent />
   <PracticeComponent /> -->
 
-  <LifeCycleHooks />
+  <!-- <LifeCycleHooks /> -->
+
+  <BasicComponent />
+  <ReactiveObject />
+  <UsingGetterFunction />
+  <MultipleSources />
 </template>
 <style scoped></style>
