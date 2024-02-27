@@ -480,8 +480,117 @@ const studentArrays = inject(studentArrays)
 </template>
 ```
 
+### Lifecycle Hooks
+
+Lifecycle hooks are special methods provided by Vue.js that allow you to execute code at different stages of a component's lifecycle. These books provide developers with the ability to perform actions or respond to events at specific points during the creation, updating, and destruction of a Vue component.
+
+Lifecycle hooks là các phương thức đặc biệt do Vue.js cung cấp, cho phép bạn thực thi mã ở các giai đoạn khác nhau trong vòng đời của một thành phần. Những cuốn sách này cung cấp cho nhà phát triển khả năng thực hiện các hành động hoặc phản hồi các sự kiện tại các điểm cụ thể trong quá trình tạo, cập nhật và hủy thành phần Vue.
+
+Mount
+
+Mounting means when a component is being created and inserted into the DOM
+
+Gắn kết (Mounting) có nghĩa là khi một thành phần đang được tạo và chèn vào DOM
+
+Unmount
+
+Unmounting means when a component is being removed from the DOM
+
+Ngắt kết nối (Unmounting) có nghĩa là khi một thành phần đang bị xóa khỏi DOM
+
+onBeforeMount
+
+Registers a hook to be called right before the component is to be mounted - Đăng ký một hook để được gọi ngay trước khi thành phần được gắn kết
+
+When this hook is called, the component has finished setting up its reactive state, but no DOM nodes have been created yet.
+It is about execute its DOM render effect for the first time.
+
+Khi hook này được gọi, thành phần đã thiết lập xong trạng thái phản ứng của nó, nhưng chưa có nút DOM nào được tạo.
+Đó là về việc thực thi hiệu ứng kết xuất DOM lần đầu tiên.
+
+onMounted
+
+onMounted is used to for executing logic or actions after a component has been mounted to the DOM. This hook is particularly useful for tasks that should occur once the component is ready to interact with the user, such as fetching data, setting up event lisnters, or performing initial calculations.
+
+onMounted được sử dụng để thực thi logic hoặc hành động sau khi một thành phần được gắn vào DOM. Móc này đặc biệt hữu ích cho các tác vụ sẽ xảy ra khi thành phần sẵn sàng tương tác với người dùng, chẳng hạn như tìm nạp dữ liệu, thiết lập trình liệt kê sự kiện hoặc thực hiện các phép tính ban đầu.
+
+onBeforeUpdate:
+
+Register a hook to be called righ before the component is about to update its DOM tree due to reactive state change.
+
+This Hook can be used to access the DOM state before Vue updates the DOM. It is also safe to modify components state inside this hook
+
+Đăng ký một hook để được gọi ngay trước khi thành phần sắp cập nhật cây DOM của nó do thay đổi trạng thái phản ứng.
+
+Hook này có thể được sử dụng để truy cập trạng thái DOM trước khi Vue cập nhật DOM. Việc sửa đổi trạng thái các thành phần bên trong hook này cũng an toàn
+
+onUpdated:
+
+Registers a callback to be called after the component has updated its DOM tree due to a reactive state change.
+
+This hook is called after any DOM update of the component, Which can be caused by different state changes, because multiple state changes can be batched into a single render cycle for performance reasons.
+
+Đăng ký một cuộc gọi lại để được gọi sau khi thành phần đã cập nhật cây DOM do thay đổi trạng thái phản ứng.
+
+Hook này được gọi sau bất kỳ bản cập nhật DOM nào của thành phần. Điều này có thể do các thay đổi trạng thái khác nhau gây ra, vì nhiều thay đổi trạng thái có thể được gộp thành một chu kỳ kết xuất duy nhất vì lý do hiệu suất.
+
+onBeforeUnmount:
+
+Register a hook to be called right before a component instance is to be unmounted. When this hook is called, the component instance is still fully functional.
+
+Đăng ký một hook để được gọi ngay trước khi một phiên bản thành phần được ngắt kết nối. Khi hook này được gọi, phiên bản thành phần vẫn có đầy đủ chức năng.
+
+onUnmounted:
+
+Registers a callback to be called after the component has been unmounted. Use this hook to clean up manually created side effects such as timers, DOM event listeners or server connections.
+
+Đăng ký một cuộc gọi lại để được gọi sau khi thành phần đã được ngắt kết nối. Sử dụng hook này để dọn sạch các tác dụng phụ được tạo thủ công như bộ hẹn giờ, trình xử lý sự kiện DOM hoặc kết nối máy chủ.
+
+ChatGPT:
+
+Trong Vue.js, Lifecycle Hooks (Các Kết Nối Vòng Đời) là các phương thức mà bạn có thể định nghĩa trong một component để thực hiện các công việc cụ thể tại các giai đoạn cụ thể của vòng đời của component. Các Lifecycle Hooks giúp bạn kiểm soát và thực hiện các hành động tại các điểm cụ thể trong quá trình mà component được tạo, cập nhật, và hủy.
+
+Dưới đây là một số Lifecycle Hooks quan trọng trong Vue.js:
+
+beforeCreate: Được gọi trước khi component được tạo. Trong giai đoạn này, các dữ liệu và sự kiện của component chưa được khởi tạo.
+
+created: Được gọi sau khi component được tạo. Trong giai đoạn này, các dữ liệu và sự kiện của component đã được khởi tạo, nhưng component chưa được gắn vào DOM.
+
+beforeMount: Được gọi trước khi component được gắn vào DOM.
+
+mounted: Được gọi sau khi component được gắn vào DOM. Trong giai đoạn này, bạn có thể truy cập các phần tử DOM và thực hiện các tác vụ liên quan đến DOM.
+
+beforeUpdate: Được gọi trước khi component được cập nhật khi có thay đổi dữ liệu.
+
+updated: Được gọi sau khi component đã được cập nhật khi có thay đổi dữ liệu.
+
+beforeDestroy: Được gọi trước khi component bị hủy.
+
+destroyed: Được gọi sau khi component đã bị hủy. Trong giai đoạn này, bạn có thể thực hiện các tác vụ dọn dẹp và giải phóng bộ nhớ.
+
+Để sử dụng các Lifecycle Hooks, bạn chỉ cần định nghĩa các phương thức với tên tương ứng trong đối tượng methods của component. Vue.js sẽ tự động gọi các phương thức này tại các thời điểm phù hợp trong vòng đời của component.
 
 ### Watchers
+
+"Watcher" allows us to reactively watch for changes in a specific property or expression and perform some custom logic when that property or expression changes. Watchers are part of Vue reactivity system, Which enables the framework to automatically update the DOM when the underlying data changes
+
+"Người theo dõi" cho phép chúng tôi theo dõi một cách phản ứng các thay đổi trong một thuộc tính hoặc biểu thức cụ thể và thực hiện một số logic tùy chỉnh khi thuộc tính hoặc biểu thức đó thay đổi. Trình theo dõi là một phần của hệ thống phản ứng Vue, cho phép khung tự động cập nhật DOM khi dữ liệu cơ bản thay đổi
+
+Watch(source, callback, options)
+
+- Ref
+- Reactive
+- Array
+- Getter Function
+
+The callback function is called whenever some data changes: Hàm gọi lại được gọi bất cứ khi nào một số dữ liệu thay đổi
+
+Watch(source, (newVal, oldVal) => {})
+
+- immediate
+- deep
+- flush
+- onTrack(onTrigger)
 
 ### Template Ref
 
