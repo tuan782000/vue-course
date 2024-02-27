@@ -418,7 +418,68 @@ Vị trí được đặt tên là một cách để gán một tên cụ thể 
 
 ### Provide && Inject
 
-### Lifecycle Hooks
+Provide && Inject
+
+The Provide and inject options are used for providing and injecting properties or data down the component hierarchy. They anable form of dependencies injection, allowing a parent component to provide data or methods that child components can then inject and use.
+
+Các tùy chọn Cung cấp và đưa vào được sử dụng để cung cấp và đưa các thuộc tính hoặc dữ liệu vào hệ thống phân cấp thành phần. Chúng có thể thực hiện hình thức chèn phần phụ thuộc, cho phép thành phần cha mẹ cung cấp dữ liệu hoặc phương thức mà các thành phần con sau đó có thể đưa vào và sử dụng.
+
+Provide - nhà cung cấp
+
+Provide is an option in a parent component that allows it to share data or methods with its child components. It makes properties or methods available for injection into child components.
+
+Cung cấp (Provide) là một tùy chọn trong thành phần gốc cho phép nó chia sẻ dữ liệu hoặc phương thức với các thành phần con của nó. Nó làm cho các thuộc tính hoặc phương thức có sẵn để đưa vào các thành phần con.
+
+Inject - tiêm
+
+Inject is an option in a child component that specifies which properties or methods it wants to recieve from its parent component. It allows a component to inject and use provided data or methods.
+
+Tiêm (Inject) là một tùy chọn trong thành phần con chỉ định các thuộc tính hoặc phương thức mà nó muốn nhận từ thành phần cha của nó. Nó cho phép một thành phần chèn và sử dụng dữ liệu hoặc phương thức được cung cấp (Provide).
+
+Tạo nhà cung cấp - Thằng muốn truyền gửi dữ liệu đi thì provide
+
+Thằng cần nhận dữ liệu dùng Inject
+
+Giải thích nhà cung cấp:
+
+```js
+// cha
+// Using Provide With Array
+provide('friends', ['Alex', 'Jordan', 'HuXn', 'John']) // tham số thứ 1 tên đại diện, tham số thứ 2 sẽ là dữ liệu truyền đi
+
+// con
+inject('friends') // lấy tên của nhà cũng cấp để sử dụng
+```
+
+```vue
+<!-- Ông -->
+
+<script setup>
+import { provide } from 'vue'
+provide('studentArrays', ['Tuan', 'Nguyen', 'Thai'])
+</script>
+<template>...</template>
+```
+
+<!-- cha, dùng con là cháu của ông ở cha, sau đó dùng cha ở ông vẫn có dữ liệu bình thường -->
+
+...
+
+<!-- cháu -->
+
+<script setup>
+import { inject } from 'vue'
+const studentArrays = inject(studentArrays)
+</script>
+<template>
+<ul>
+  <li v-for="(student, index) in studentArrays" :key="index">
+    {{ student }}
+  </li>
+</ul>
+</template>
+```
+
 
 ### Watchers
 
