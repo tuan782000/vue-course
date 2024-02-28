@@ -99,8 +99,15 @@
 // import MultipleSources from './components/MultipleSources.vue'
 
 // Refs
-import BasicRef from './components/BasicRef.vue'
-import FunctionRef from './components/FunctionRef.vue'
+// import BasicRef from './components/BasicRef.vue'
+// import FunctionRef from './components/FunctionRef.vue'
+
+// Async
+// import ToggleFriends from './components/ToggleFriends.vue'
+
+// Composable
+import CounterComponent from './components/CounterComponent.vue'
+import Todolist from './components/Todolist.vue'
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -178,7 +185,13 @@ import FunctionRef from './components/FunctionRef.vue'
   <UsingGetterFunction />
   <MultipleSources /> -->
 
-  <BasicRef />
-  <FunctionRef />
+  <!-- <BasicRef />
+  <FunctionRef /> -->
+
+  <!-- Async Component -->
+  <!-- <ToggleFriends /> -->
+
+  <CounterComponent />
+  <Todolist />
 </template>
 <style scoped></style>

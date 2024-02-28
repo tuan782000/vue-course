@@ -598,10 +598,23 @@ A template Ref is a way to create a reference to a child component, element, or 
 
 Tham chiếu mẫu là một cách để tạo tham chiếu đến thành phần con, phần tử hoặc phần tử DOM trong một mẫu. Điều này cho phép bạn truy cập và thao tác đối tượng được tham chiếu trực tiếp trong logic của thành phần. Tham chiếu thường được sử dụng để tương tác với các thành phần con, kích hoạt các hành động bắt buộc hoặc truy cập các thuộc tính và phương thức của các thành phần DOM.
 
-
 ### Async Components
 
+Async component is a feature that allows you to load a component asynchronously, meaning the component is loaded and rendered only when it's needed. This is particularly useful for optimizing the initial loading time of your application, especially with dealing with large and complex components that might not be necessary on the first page load.
+
+Async component là tính năng cho phép bạn tải một Async component, nghĩa là thành phần đó chỉ được tải và hiển thị khi cần thiết. Điều này đặc biệt hữu ích để tối ưu hóa thời gian tải ban đầu của ứng dụng, đặc biệt là khi xử lý các thành phần lớn và phức tạp có thể không cần thiết trong lần tải trang đầu tiên.
+
+definetAsyncComponent()
+
+Is used to create asynchronous components. Async components are loaded and resolved astnchronously, which can be helpful for improving the initial loading performance of your capplication by deferring the loading of certain components until they are acctually needed.
+
+Được sử dụng để tạo các thành phần không đồng bộ. Các thành phần không đồng bộ được tải và giải quyết đồng bộ, điều này có thể hữu ích để cải thiện hiệu suất tải ban đầu của ứng dụng của bạn bằng cách trì hoãn việc tải một số thành phần nhất định cho đến khi chúng thực sự cần thiết.
+
 ### Composables
+
+A composable is a function or set of functions that encapsulate a piece of logic and can be composed together to build the functionality of a Vue component. Composables are designed to be reusable and sharedable making it easier to manage complex logic and behavior in a Vue application.
+
+useComposable()
 
 ### Custom Directives
 
