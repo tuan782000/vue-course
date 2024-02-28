@@ -594,6 +594,11 @@ Watch(source, (newVal, oldVal) => {})
 
 ### Template Ref
 
+A template Ref is a way to create a reference to a child component, element, or a DOM element within a template. This allows you to access and manipulate the referenced object directly in your component's logic. Refs are commonly used to interact with child components, trigger imperative actions, or access properties and methods of DOM elements.
+
+Tham chiếu mẫu là một cách để tạo tham chiếu đến thành phần con, phần tử hoặc phần tử DOM trong một mẫu. Điều này cho phép bạn truy cập và thao tác đối tượng được tham chiếu trực tiếp trong logic của thành phần. Tham chiếu thường được sử dụng để tương tác với các thành phần con, kích hoạt các hành động bắt buộc hoặc truy cập các thuộc tính và phương thức của các thành phần DOM.
+
+
 ### Async Components
 
 ### Composables

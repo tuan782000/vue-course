@@ -92,11 +92,15 @@
 // LifeCycle Hooks
 // import LifeCycleHooks from './components/LifeCycleHooks.vue'
 
-// Watch 
-import BasicComponent from './components/BasicComponent.vue';
-import ReactiveObject from './components/ReactiveObject.vue';
-import UsingGetterFunction from './components/UsingGetterFunction.vue';
-import MultipleSources from './components/MultipleSources.vue'
+// Watch
+// import BasicComponent from './components/BasicComponent.vue';
+// import ReactiveObject from './components/ReactiveObject.vue';
+// import UsingGetterFunction from './components/UsingGetterFunction.vue';
+// import MultipleSources from './components/MultipleSources.vue'
+
+// Refs
+import BasicRef from './components/BasicRef.vue'
+import FunctionRef from './components/FunctionRef.vue'
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -169,9 +173,12 @@ import MultipleSources from './components/MultipleSources.vue'
 
   <!-- <LifeCycleHooks /> -->
 
-  <BasicComponent />
+  <!-- <BasicComponent />
   <ReactiveObject />
   <UsingGetterFunction />
-  <MultipleSources />
+  <MultipleSources /> -->
+
+  <BasicRef />
+  <FunctionRef />
 </template>
 <style scoped></style>
