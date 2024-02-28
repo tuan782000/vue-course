@@ -106,8 +106,16 @@
 // import ToggleFriends from './components/ToggleFriends.vue'
 
 // Composable
-import CounterComponent from './components/CounterComponent.vue'
-import Todolist from './components/Todolist.vue'
+// import CounterComponent from './components/CounterComponent.vue'
+// import Todolist from './components/Todolist.vue'
+
+// Custom Directives
+// import CustomMyComponent from './components/CustomMyComponent.vue'
+
+import MainComponent from './components/MainComponent.vue'
+
+import GettingDataWithFetch from './components/GettingDataWithFetch.vue'
+import GettingDataWithAxios from './components/GettingDataWithAxios.vue'
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -191,7 +199,15 @@ import Todolist from './components/Todolist.vue'
   <!-- Async Component -->
   <!-- <ToggleFriends /> -->
 
-  <CounterComponent />
-  <Todolist />
+  <!-- <CounterComponent />
+  <Todolist /> -->
+
+  <!-- <CustomMyComponent /> -->
+
+  <!-- Dynamic Components -->
+  <MainComponent />
+  <!-- Fetch -->
+  <GettingDataWithFetch />
+  <GettingDataWithAxios />
 </template>
 <style scoped></style>

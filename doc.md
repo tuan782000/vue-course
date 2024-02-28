@@ -618,6 +618,20 @@ useComposable()
 
 ### Custom Directives
 
+Vue provides a set of built-in directives such as v-if, v-for, v-model, etc, Custom directives allow you to define your own behavior that can be applied to elements in the template.
+
+Vue cung cấp một tập hợp các lệnh tích hợp như v-if, v-for, v-model, v.v.. Các lệnh tùy chỉnh cho phép bạn xác định hành vi của riêng mình có thể áp dụng cho các thành phần trong mẫu.
+
+How to create one?
+
+A custom directive is defined as an object containing lifecycle hooks similar to component hooks eg. mounted() unmounted() etc.
+
 ### Dynamic Components
+
+Dynamic Components refer to the ability to dynamically switch between different components based on certain condtions or user interactions. This is achieved using the component element and the attribute.
+
+Thành phần động đề cập đến khả năng chuyển đổi linh hoạt giữa các thành phần khác nhau dựa trên các điều kiện hoặc tương tác nhất định của người dùng. Điều này đạt được bằng cách sử dụng phần tử thành phần và thuộc tính.
+
+
 
 ### Data Fetching in Vue
