@@ -112,10 +112,21 @@
 // Custom Directives
 // import CustomMyComponent from './components/CustomMyComponent.vue'
 
-import MainComponent from './components/MainComponent.vue'
+// import MainComponent from './components/MainComponent.vue'
 
-import GettingDataWithFetch from './components/GettingDataWithFetch.vue'
-import GettingDataWithAxios from './components/GettingDataWithAxios.vue'
+// import GettingDataWithFetch from './components/GettingDataWithFetch.vue'
+// import GettingDataWithAxios from './components/GettingDataWithAxios.vue'
+
+import TaskList from './components/Project/Project01/TaskList.vue'
+import RandomQuoteGenerator from './components/Project/Project02/RandomQuoteGenerator.vue'
+import AmazingCaculator from './components/Project/Project03/AmazingCaculator.vue'
+import AccordionComponent from './components/Project/Project04/AccordionComponent.vue'
+import FormValidation from './components/Project/Project05/FormValidation.vue'
+import PasswordGenerator from './components/Project/Project06/PasswordGenerator.vue'
+import ProgressSteps from './components/Project/Project07/ProgressSteps.vue'
+import DadJokes from './components/Project/Project08/DadJokes.vue'
+import GithubUsersSearch from './components/Project/Project09/GithubUsersSearch.vue'
+import WikiComponent from './components/Project/Project10/WikiComponent.vue'
 </script>
 <template>
   <!-- vbind và dynamic binding -->
@@ -205,9 +216,30 @@ import GettingDataWithAxios from './components/GettingDataWithAxios.vue'
   <!-- <CustomMyComponent /> -->
 
   <!-- Dynamic Components -->
-  <MainComponent />
+  <!-- <MainComponent /> -->
   <!-- Fetch -->
-  <GettingDataWithFetch />
-  <GettingDataWithAxios />
+  <!-- <GettingDataWithFetch />
+  <GettingDataWithAxios /> -->
+
+  <!-- Project -->
+  <TaskList />
+  <!-- Random Quotes -->
+  <RandomQuoteGenerator />
+  <!-- Amazing Calculator -->
+  <AmazingCaculator />
+  <!-- Accordion -->
+  <AccordionComponent />
+  <!-- Form Validation -->
+  <FormValidation />
+  <!-- Password generator -->
+  <PasswordGenerator />
+  <!-- ProgressSteps -->
+  <ProgressSteps />
+  <!-- DadJokes -->
+  <DadJokes />
+  <!-- Github Search -->
+  <GithubUsersSearch />
+  <!-- WikiComponent -->
+  <WikiComponent />
 </template>
 <style scoped></style>
